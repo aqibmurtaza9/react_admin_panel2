@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Login from './Components/Login';
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from './Components/Dashboard';
+import Dashboard from './Components/Layout';
 function App() {
   const name = "Please Sign in to use";
 
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login handleClick={handleClick}/>}/>
-        <Route path="/dashboard" element={<Dashboard />}/>
+        <Route path="/dashboard" element={<Layout />}/>
       </Routes>
     </Router>
   );

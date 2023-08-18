@@ -44,7 +44,7 @@ body {
 
 .sidebar ul li{
   list-style: none;
-  padding: 12px 20px;
+  padding: 12px 0px;
   font-size: 14px;
   line-height: 20px;
 }
@@ -57,9 +57,10 @@ body {
   opacity: .7;
 }
 
-.sidebar .info li small{
-  font-size: 12px;
-  font-weight: 100;
+.sidebar .info li .small-text{
+  font-size: 10px;
+  margin: 4px;
+  display: block;
 }
 
 .sidebar .info li a{
@@ -80,6 +81,22 @@ body {
 .sidebar .nav-options li a{
   text-decoration: none;
   color: inherit;
+}
+
+.menu-text{
+  display: none;
+}
+
+.info{
+  height: 60px;
+}
+
+.display-info{
+  display: inline-table;
+}
+
+.option-padding-close{
+  padding:0px !important;
 }
 
 .top-nav-main{

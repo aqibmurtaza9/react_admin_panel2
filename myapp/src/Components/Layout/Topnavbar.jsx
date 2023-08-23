@@ -10,6 +10,7 @@ class Topnavbar extends Component {
               <Navbar.Brand href="#" className='px-2'>Your App</Navbar.Brand>
               <Nav className="mr-auto">
                 {/* Add your top navbar links here */}
+                <lable>About us</lable>
               </Nav>
             </Navbar>
           </>

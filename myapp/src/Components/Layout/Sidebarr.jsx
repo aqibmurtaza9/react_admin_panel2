@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Stack from 'react-bootstrap/Stack';
-import { Nav } from 'react-bootstrap';
+import { BsHouse } from "react-icons/bs";
+import { BsSpeedometer2 } from "react-icons/bs";
+import { BsBootstrapFill } from "react-icons/bs";
+import './Sidebar.css';
+
 class Sidebarr extends Component {
     state = {  } 
     render() { 
         return (
           <>
-            <Nav className="col-md-2 d-none d-md-block bg-dark sidebar">
-              {/* Sidebar content */}
-              {/* Add your sidebar content here */}
-            </Nav>
+            <div className="bg-white p-2">
+                <div className="m-2">
+                    <i className="me-2 fs-4"><BsBootstrapFill/></i>
+                    <span className="brand-name">Aqib</span>
+                </div>
+                <hr className="text-dark"/>
+                <div className="list-group list-group-flush">
+                    <a className="list-group-item list-group-item-action py-2">
+                      <i className="fs-5  me-3"><BsSpeedometer2/></i>
+                      <span className="fs-5">Dashboard</span>
+                    </a>
+                    <a className="list-group-item list-group-item-action py-2">
+                      <i className="fs-5 me-3"><BsHouse/></i>
+                      <span className="fs-5">Home</span>
+                    </a>
+                </div>
+            </div>
           </>
         );
     }

@@ -9,11 +9,14 @@ import { BsFillLaptopFill } from "react-icons/bs";
 import { BsFillPeopleFill } from "react-icons/bs";
 import Dashboard  from './Components/Dashboard'
 import Sidebarr from './Components/Layout/Sidebarr';
-import Layout from './Components/Layout/Layout';
+import Nav from './Components/Layout/Nav';
+
+
 function App() {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [isLogin, setLogin] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   const options = [
     {
@@ -48,15 +51,16 @@ function App() {
   };
 
   return (
-    <Router>
-          {/* <Sidebar options= {options} onSelectOption={setSelectedOption}/> */}
-          <Layout/>
-      <Routes>
-        <Route path="/login" element={<Login handleClick={handleClick}/>}/>
-        <Route path="/sidebarr" element={<Sidebarr/>}/>
-
-      </Routes>
-    </Router>
+    <div className="container-fluid bg-secondary min-vh-100"> 
+      <div className="row">
+          <div className="col-2 bg-white vh-100">
+               <Sidebarr/>
+          </div>
+          <div className="col p-0">
+              <Nav/>
+          </div>
+      </div>
+    </div>
   );
 }
 

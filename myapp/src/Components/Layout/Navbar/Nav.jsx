@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BsJustifyLeft } from "react-icons/bs";
-import 'bootstrap/js/dist/dropdown'
+import 'bootstrap/js/dist/dropdown';
 
 class Nav extends Component {
     state = {  } 

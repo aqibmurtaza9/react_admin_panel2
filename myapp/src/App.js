@@ -1,16 +1,13 @@
 import React,{ useState } from 'react';
 import './App.css';
-import Login from './Components/Login';
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from './Components/Sidebar';
 import { BsArrowLeftCircle } from "react-icons/bs";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { BsFillLaptopFill } from "react-icons/bs";
 import { BsFillPeopleFill } from "react-icons/bs";
-import Dashboard  from './Components/Dashboard'
-import Sidebarr from './Components/Layout/Sidebarr';
-import Nav from './Components/Layout/Nav';
-
+import Layout from './Components/Layout/Layout';
+import Login from './Components/Login/Login';
+import Dashboard from './Components/Pages/Dashboard/Dashboard.jsx'
 
 function App() {
 
@@ -36,12 +33,11 @@ function App() {
   const renderSelectedComponent = () => {
     switch (selectedOption?.name) {
       case 'Dashboard':
-        return <Dashboard />;
+        return '<Dashboard />';
       default:
         return null;
     }
   };
-  const name = "Please Sign in to use";
 
   const handleClick = (email, password) =>{
       // console.log(email,password);
@@ -51,16 +47,16 @@ function App() {
   };
 
   return (
-    <div className="container-fluid bg-secondary min-vh-100"> 
-      <div className="row">
-          <div className="col-2 bg-white vh-100">
-               <Sidebarr/>
-          </div>
-          <div className="col p-0">
-              <Nav/>
-          </div>
-      </div>
-    </div>
+        <>
+        <Router>
+            <Routes>
+              <Route path="/"  element={<Login/>}/>
+              <Route element={<Layout/>}>
+                <Route path="/dashboard"  element={<Dashboard/>}/>
+              </Route>
+            </Routes>
+        </Router>
+        </>
   );
 }
 

@@ -4,7 +4,7 @@ import { BsSpeedometer2 } from "react-icons/bs";
 import { BsBootstrapFill } from "react-icons/bs";
 import './Sidebar.css';
 
-class Sidebarr extends Component {
+class Sidebar extends Component {
     state = {  } 
     render() { 
         return (
@@ -31,4 +31,4 @@ class Sidebarr extends Component {
     }
 }
  
-export default Sidebarr;
+export default Sidebar;

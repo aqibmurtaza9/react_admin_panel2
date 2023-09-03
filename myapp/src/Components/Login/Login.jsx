@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Login.css'
 class Login extends React.Component {
     render() { 
-        return <div class="container d-flex align-items-center justify-content-center vh-100">
-                    <div class="col-md-6 shadow-lg mb-5 bg-white rounded ">
+        return <div class=" d-flex align-items-center justify-content-center vh-100 login-bg">
+                    <div class="col-md-4 shadow-lg mb-5 bg-white rounded">
                         <div class="card border">
                             <div class="card-body">
                                 <h4 class="card-title">Login</h4>

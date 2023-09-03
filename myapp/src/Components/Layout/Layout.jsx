@@ -5,7 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import Dashboard from '../Pages/Dashboard/Dashboard.jsx';
 import './Layout.css';
 class Layout extends Component {
-    state = {  } 
+  constructor(props) {
+    super(props);
+  }
     render() { 
         return (
             <div className="container-fluid  min-vh-100">
@@ -13,11 +15,12 @@ class Layout extends Component {
                 <div className="fixed sidebar-bg vh-100">
                   <Sidebar />
                 </div>
-                <div className="col p-0">
+                <div className="col p-0 ">
                   <Nav />
-                    <div className="p-2">
-                    
-                    </div>
+                  <div className="col p-2">
+                      {/* component rendring */}
+                      {this.props.children}
+                  </div>
                 </div>
               </div>
             </div>

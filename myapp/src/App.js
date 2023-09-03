@@ -51,9 +51,7 @@ function App() {
         <Router>
             <Routes>
               <Route path="/"  element={<Login/>}/>
-              <Route element={<Layout/>}>
-              <Route path="/dashboard" element={<Dashboard />} />
-              </Route>
+              <Route path="/dashboard" element={<Layout children={<Dashboard/>}/>} />             
             </Routes>
         </Router>
         </>

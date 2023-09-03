@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { BsJustifyLeft } from "react-icons/bs";
 import 'bootstrap/js/dist/dropdown';
+import './Nav.css';
 
 class Nav extends Component {
     state = {  } 
     render() { 
         return (
-                <nav className="navbar navbar-expand-sm navbar-white bg-white px-3">
+                <nav className="navbar navbar-expand-sm navbar-white bg-white px-3 nav-radius">
                     <i className="fs-4 navbar-brand"><BsJustifyLeft/></i>
                     <button className="navbar-toggler d lg-none" type="button" data-bs-toggle="collapse" 
                       data-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation"></button>

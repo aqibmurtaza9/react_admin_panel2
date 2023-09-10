@@ -5,6 +5,10 @@ import { BsBootstrapFill } from "react-icons/bs";
 import './Sidebar.css';
 
 class Sidebar extends Component {
+
+  constructor(props){
+    super(props);
+  }
     state = {  }
 
   
@@ -30,7 +34,7 @@ class Sidebar extends Component {
                     <li className="nav-item" key={index}>
                       <a className="nav-link text-color" href="#">
                         <i className="fs-5 me-3">{option.icon}</i>
-                        {option.name}
+                        <span className="">{option.name}</span>
                       </a>
                     </li>
                   ))}

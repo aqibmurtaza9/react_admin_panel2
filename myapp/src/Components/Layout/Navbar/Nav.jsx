@@ -4,13 +4,29 @@ import 'bootstrap/js/dist/dropdown';
 import './Nav.css';
 
 class Nav extends Component {
-    state = {  } 
+    constructor(props){
+        super(props);
+
+        this.state = { 
+            isToggled : false
+        } 
+    }
+
+    handleSidebar=(e)=>{
+        e.preventDefault();
+        console.log("collapse click");
+        const { isToggled } = this.state;
+        this.setState({ isToggled: !isToggled});
+        this.props.onToggleSidebar(this.state.isToggled);
+        console.log(isToggled)
+    }
+
     render() { 
         return (
             <div className="sidebar-bg">
                 <nav className="navbar navbar-expand-sm navbar-white nav-bg px-3 nav-radius ">
-                    <i className="fs-4 navbar-brand"><BsJustifyLeft/></i>
-                    <button className="navbar-toggler d lg-none" type="button" data-bs-toggle="collapse" 
+                    <a className="fs-4 navbar-brand" onClick={this.handleSidebar}><BsJustifyLeft/></a>
+                    <button className="navbar-toggler d lg-none"  type="button" data-bs-toggle="collapse" 
                       data-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation"></button>
                     <div className="collapse navbar-collapse" id="collapsibleNavId">
                        <ul className="navbar-nav  ms-auto mt-2 mt-lg-0" >

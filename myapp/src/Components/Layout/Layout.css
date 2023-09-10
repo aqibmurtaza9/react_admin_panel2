@@ -1,3 +1,11 @@
 .fixed{
     width: 230px !important;
 }
+
+.collpased-fixed{
+    width: 65px !important;
+}
+
+.hide-text{
+    display: none;
+}

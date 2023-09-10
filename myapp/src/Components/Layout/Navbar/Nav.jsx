@@ -25,7 +25,7 @@ class Nav extends Component {
         return (
             <div className="sidebar-bg">
                 <nav className="navbar navbar-expand-sm navbar-white nav-bg px-3 nav-radius ">
-                    <a className="fs-4 navbar-brand" onClick={this.handleSidebar}><BsJustifyLeft/></a>
+                    <a className="fs-4 navbar-brand pointer" href="" onClick={this.handleSidebar}><BsJustifyLeft/></a>
                     <button className="navbar-toggler d lg-none"  type="button" data-bs-toggle="collapse" 
                       data-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation"></button>
                     <div className="collapse navbar-collapse" id="collapsibleNavId">

@@ -9,16 +9,19 @@ class Layout extends Component {
     super(props);
     this.state={
           sidebarClassWidthClass :'fixed',
-          
+          hideText : ''
+
     };
   }
    
   handleToggleSidebar=(isToggled)=>{
               if(isToggled){
                this.setState({sidebarClassWidthClass : 'collpased-fixed'});
+               this.setState({hideText : 'hide-text'});
               }
               else{
                 this.setState({sidebarClassWidthClass : 'fixed'});
+                this.setState({hideText : ''});
               }
     
   }
@@ -29,7 +32,7 @@ class Layout extends Component {
             <div className="container-fluid  min-vh-100">
               <div className="row">
                 <div className={`${this.state.sidebarClassWidthClass} sidebar-bg vh-100`}>
-                  <Sidebar />
+                  <Sidebar hideTextClass={this.state.hideText}/>
                 </div>
                 <div className="col p-0 ">
                   <Nav onToggleSidebar={this.handleToggleSidebar}/>

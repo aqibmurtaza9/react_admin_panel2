@@ -13,7 +13,8 @@ class Sidebar extends Component {
 
   
     render() { 
-    
+      
+      const {hideTextClass} = this.props;
       const options = [
       {
         name: 'Dashboard',
@@ -34,7 +35,7 @@ class Sidebar extends Component {
                     <li className="nav-item" key={index}>
                       <a className="nav-link text-color" href="#">
                         <i className="fs-5 me-3">{option.icon}</i>
-                        <span className="">{option.name}</span>
+                        <span className={hideTextClass}>{option.name}</span>
                       </a>
                     </li>
                   ))}

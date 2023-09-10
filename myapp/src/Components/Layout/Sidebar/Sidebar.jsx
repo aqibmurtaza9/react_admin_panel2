@@ -5,26 +5,35 @@ import { BsBootstrapFill } from "react-icons/bs";
 import './Sidebar.css';
 
 class Sidebar extends Component {
-    state = {  } 
+    state = {  }
+
+  
     render() { 
+    
+      const options = [
+      {
+        name: 'Dashboard',
+        icon: <BsSpeedometer2/>, 
+      },
+      {
+        name: 'Home',
+        icon: <BsHouse/>,
+      },
+    ]; 
         return (
           <>
             <nav class="navbar">
                 <a class="navbar-brand mx-auto" href="#">Aqib</a>
                 <div class="container-fluid">
                   <ul class="navbar-nav">
-                    <li class="nav-item ">
-                        <a class="nav-link text-color " href="#">
-                          <i className="fs-5  me-3 "><BsSpeedometer2/></i>
-                              Dashboard
-                        </a>
+                  {options.map((option, index) => (
+                    <li className="nav-item" key={index}>
+                      <a className="nav-link text-color" href="#">
+                        <i className="fs-5 me-3">{option.icon}</i>
+                        {option.name}
+                      </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-color" href="#">
-                          <i className="fs-5  me-3"><BsHouse/></i>
-                              Home
-                        </a>
-                    </li>
+                  ))}
                   </ul>
                 </div>
               </nav>

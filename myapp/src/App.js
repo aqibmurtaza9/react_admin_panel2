@@ -8,6 +8,7 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import Layout from './Components/Layout/Layout';
 import Login from './Components/Login/Login';
 import Dashboard from './Components/Pages/Dashboard/Dashboard.jsx'
+import ProtectedRoutes from './Routes/ProtectedRoutes';
 
 
 function App() {
@@ -29,7 +30,12 @@ function App() {
         <>
             <Routes>
               <Route path="/"  element={<Login onLogin={handleLogin}/>}/>
-              <Route path="/dashboard" element={<Layout children={<Dashboard/>}/>} />             
+              <Route  path="/dashboard"  
+                      element={
+                      <ProtectedRoutes children={<Layout children ={<Dashboard/>} />}>
+                      </ProtectedRoutes>
+                      }             
+              />
             </Routes>
         </>
   );

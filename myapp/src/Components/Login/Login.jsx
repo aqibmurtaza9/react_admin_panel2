@@ -22,17 +22,17 @@ class Login extends React.Component {
                     <div className="col-md-4 shadow-lg mb-5 bg-white rounded">
                         <div className="card border">
                             <div className="card-body">
-                                <h4 className="card-title">Login</h4>
+                                <h4 className="card-title text-center">Login</h4>
                                 <form onSubmit={this.handleFormSubmit}>
-                                <div className="form-group">
-                                    <label htmlFor="username">Username</label>
+                                <div className="form-group mt-2">
+                                    {/* <label htmlFor="username">Username</label> */}
                                     <input type="text" name="email" className="form-control" id="username" placeholder="Enter username"/>
                                 </div>
-                                <div className="form-group">
-                                    <label htmlFor="password">Password</label>
+                                <div className="form-group mt-2">
+                                    {/* <label htmlFor="password">Password</label> */}
                                     <input type="password" name="password" className="form-control" id="password" placeholder="Password"/>
                                 </div>
-                                <button type="submit" className="btn btn-primary mt-2">Login</button>
+                                <button type="submit" className="btn btn-warning mt-2 w-100">Sign in</button>
                                 </form>
                             </div>
                         </div>

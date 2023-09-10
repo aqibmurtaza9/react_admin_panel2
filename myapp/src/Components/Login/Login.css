@@ -1,8 +1,14 @@
 .login-bg {
     background-image: radial-gradient(at top left, transparent 67%, #fff 67.5%),
-        linear-gradient(135deg, #51a595 0%, #3fcfa2 100%);
+        linear-gradient(135deg, #363c5a 0%, #2e3351 100%);
     background-size: 120% 100%,cover;
     background-repeat: no-repeat;
     margin: 0;
     height: 100vh;
+}
+#username::placeholder{
+    font-size: 12px;
+}
+#password::placeholder{
+    font-size: 12px;
 }

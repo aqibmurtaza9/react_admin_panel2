@@ -33,7 +33,10 @@ class Login extends React.Component {
                                     <input type="password" name="password" className="form-control" id="password" placeholder="Password"/>
                                 </div>
                                 <button type="submit" className="btn btn-warning mt-2 w-100">Sign in</button>
+                                 <a className="link-primary hover" href="#">forgot password?</a>
                                 </form>
+                                <br/>
+                                <button type="submit" className="tomato btn w-100">Need a login? Create an account</button>
                             </div>
                         </div>
                     </div>

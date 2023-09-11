@@ -12,3 +12,8 @@
 #password::placeholder{
     font-size: 12px;
 }
+
+.tomato{
+    background-color: tomato !important;
+    color: #fff !important;
+}

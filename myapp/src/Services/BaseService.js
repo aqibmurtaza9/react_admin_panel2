@@ -1,52 +1,66 @@
-import axios from 'axios';
+import axios from "axios";
+import {AppSettings} from './../Constants/AppSettings';
 
-const API_BASE_URL = 'http://localhost:5208';
+export default class BaseService {
+  constructor() {
+    axios.interceptors.request.use(
+      async (config) => {
+        //Need to change config.baseURL according to release (e.g for development, its Localhost)
+       // config.baseURL = AppSettings.ApiUrls.Localhost;
+        //debugger;
+        var token = localStorage.getItem("user_token");
+        //console.log(token);
 
-export default class BaseStore {
+        config.headers.authorization = "Bearer " + token;
+        config.headers.token = token;
+        //console.log(appState.state.token,"Token from appstate");
 
-  getBaseUrl(){
-    return 'http://localhost:5208';
-  }
+        return config;
+      },
 
-// ---------------------------------------axios
-makeGETRequest(url) {
-    let basePath = this.getBaseUrl();
-    url = basePath+url
-    return axios.get(url, {
-      headers: {
-        'Content-Type': 'application/json',
+      function (error) {
+        // Do something with request error
+        return Promise.reject(error);
       }
-    })
-    .then(function(response) {
-      return response.data;
-    })
-    .catch(function(error) {
-      alert("Error: "+error);
-      console.log("Error: "+error);
-    })
+    );
   }
- 
-  makeHttpRequest(url, payload) {
-    let basePath = this.getBaseUrl();
-    url = basePath+url
-    debugger;
-    
- var response1 = axios.post(url,payload,{
-  headers : {
-    'Content-Type': 'application/json'
-  }})
-    .then(function(response) {
-      return response;
-    })
-    .catch(function(error) {
-      alert("Error: "+error);
-      console.log("Error: "+error);
-    })
 
-    return response1;
-    //  return axios.post(url,{Email :"aqib",Password: "123"});
-  }
+  
+// ---------------------------------------axios
+async makeGETRequest(url) {
+  var token = localStorage.getItem("user_token");
+  let basePath = AppSettings.ApiUrls.Localhost;
+  url = basePath+url
+  return  await axios.get(url, {
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(function(response) {
+    return response.data;
+  })
+  .catch(function(error) {
+    alert("Error: "+error);
+    console.log("Error: "+error);
+  })
 }
 
+async makeHttpRequest(url, payload) {
+  let basePath = AppSettings.ApiUrls.Localhost;
+  url = basePath+url
+  debugger;
+  
+var response1 = await  axios.post(url,payload)
+  .then(function(response) {
+    return response;
+  })
+  .catch(function(error) {
+    alert("Error: "+error);
+    console.log("Error: "+error);
+  })
 
+  return response1;
+  //  return axios.post(url,{Email :"aqib",Password: "123"});
+}
+}
   

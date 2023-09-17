@@ -19,10 +19,12 @@ class Sidebar extends Component {
       {
         name: 'Dashboard',
         icon: <BsSpeedometer2/>, 
+        class : ''
       },
       {
-        name: 'Home',
+        name: 'Franchise Dashboard',
         icon: <BsHouse/>,
+        class : 'sm-text'
       },
     ]; 
         return (
@@ -35,7 +37,7 @@ class Sidebar extends Component {
                     <li className="nav-item" key={index}>
                       <a className="nav-link text-color" href="#">
                         <i className="fs-5 me-3">{option.icon}</i>
-                        <span className={hideTextClass}>{option.name}</span>
+                        <span className={`${option.class} ${hideTextClass}`}>{option.name}</span>
                       </a>
                     </li>
                   ))}

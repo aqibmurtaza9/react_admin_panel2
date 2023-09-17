@@ -9,6 +9,7 @@ import Layout from './Components/Layout/Layout';
 import Login from './Components/Login/Login';
 import Dashboard from './Components/Pages/Dashboard/Dashboard.jsx'
 import ProtectedRoutes from './Routes/ProtectedRoutes';
+import {AuthenticationService} from './Services/AuthenticationService';
 
 
 function App() {
@@ -17,11 +18,18 @@ function App() {
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (email, password) => {
+  const handleLogin = async (email, password) => {
     // You can add your login logic here
-    if (email === 'aqibmurtaza9@gmail.com' && password === '123') {
-      setLogin(true);
-      console.log("Login successful");
+    // if (email === 'aqibmurtaza9@gmail.com' && password === '123') {
+      
+    //   console.log("Login successful");
+    //   navigate('/dashboard');
+    // }
+
+    var response = await  AuthenticationService.authenticateUser(email, password);
+    if(response.data.result != null ){
+      localStorage.setItem("user_token", response.data.result.token.token);
+      console.log("Login Token: "+response.data.result.token.token);
       navigate('/dashboard');
     }
   };

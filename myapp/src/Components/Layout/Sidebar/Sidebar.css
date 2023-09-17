@@ -11,3 +11,7 @@
 .text-color{
     color: #b4b8d7 !important;
 }
+
+.sm-text{
+font-size: 13px !important;
+}

@@ -6,10 +6,10 @@ const ProtectedRoutes = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const checkUserToken = () => {
         const userToken = localStorage.getItem('user_token');
-        // if (!userToken || userToken === 'undefined') {
-        //     setIsLoggedIn(false);
-        //     return navigate('/');
-        // }
+        if (!userToken || userToken === 'undefined') {
+            setIsLoggedIn(false);
+            return navigate('/');
+        }
         setIsLoggedIn(true);
     }
     useEffect(() => {

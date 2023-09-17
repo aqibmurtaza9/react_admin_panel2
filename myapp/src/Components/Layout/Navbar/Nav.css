@@ -5,3 +5,7 @@
 .nav-bg{
     background-color:#edf2f6;
 }
+
+a:hover{
+    cursor: pointer;
+}
